@@ -141,10 +141,13 @@ include("./includes/head.php");
                                 <label for="menu_type" class="text-black form-label">Department <span class="required text-danger">*</span></label>
                                 <select type="text" class="form-control" name="department" >
                                     <option value="" disabled selected>__select__</option>
-                                    <option value="IT">IT</option>
-                                    <option value="BUSSINESS">BUSINESS</option>
-                                    <option value="THEOLOGY">THEOLOGY</option>
-                                    <option value="HEALTH SCIENCE">HEALTH SCIENCE</option>
+                                    <option value="Information and Communication technology">Information and Communication technology</option>
+                                                            <option value="Transport and Logistics Department">Transport and Logistics Department</option>
+                                                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                                            <option value="Mining Engineering">Mining Engineering</option>
+                                                            <option value="Civil Engineering">Civil Engineering</option>
+                                                            <option value="Creative Arts Department">Creative Arts Department</option>
+                                                            <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
                                 </select>
                                
                             </div>

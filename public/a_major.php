@@ -58,9 +58,23 @@ include("./includes/head.php");
                                     </thead>
                                     <tbody class=" fs-12">
                                         <?php
-                                        $major=$database->fetch("SELECT COUNT(*) as total,major_in FROM a_student_tb WHERE (internaship_periode_id={$currentIntern->id} AND partner_id IS NULL) GROUP by major_in ");
+                                        
                                         $i=0;
                                         $userID=$_SESSION['ht_userId'];
+                                        echo "<script>console.log($userID)</script>";
+                                        $partnermajor = $database->fetch("SELECT major_in FROM a_partner_tb where id = 26");
+                                        if ($partnermajor === false) {
+                                            // Handle the database query error here
+                                            echo "Database query error: " . $database->error();
+                                        } else {
+                                            // The query was successful 
+                                            $major = $partnermajor['major_in'];
+                                            // $major = json_encode($partnermajor);
+                                            // $available = json_decode($major, true);
+                                            print_r($major); 
+                                            // echo "<script>console.log($available)</script>";
+                                        }
+                                        $major=$database->fetch("SELECT COUNT(*) as total,major_in FROM a_student_tb WHERE (internaship_periode_id={$currentIntern->id} AND partner_id IS NULL AND major_in = '') GROUP by major_in ");
                                         foreach ($major as $key => $m) {
                                             $i++;
                                             $noSpace=input::removeSpaceWith($m['major_in'],"_");
@@ -69,10 +83,10 @@ include("./includes/head.php");
                                             if(isset($requested->nb)) $req=$requested->nb;
                                             ?>
                                             <tr> 
-                                            <td><?= $i?></td>
-                                    <td class=" text-capitalize"><?=$m['major_in']?></td>
-                                    <td><?=$m['total']?></td>
-                                    <td>
+                                            <td class="p-0"><?= $i?></td>
+                                    <td class="p-0" class=" text-capitalize"><?=$m['major_in']?></td>
+                                    <td class="p-0"><?=$m['total']?></td>
+                                    <td class="p-0">
                                     <input class="form-control" type="number" <?=$req>0?"readonly":""?>
                                      name="<?=$noSpace?>" id="input<?=$i?>" data-count="<?=$m['total']?>"
                                       data-name="<?=$m['major_in']?>" 

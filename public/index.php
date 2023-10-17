@@ -48,7 +48,7 @@ if(isset($_SESSION['ht_userId'])){
       </ul>
     </div>
     <div class="flex gap-5">
-      <a href="login"><button class="text-white bg-blue-500 rounded px-10 uppercase py-2 hover:bg-blue-700">LOGIN</button></a>
+      <a href="login"><button class="text-white bg-blue-500 rounded px-10 uppercase py-2.5 hover:bg-blue-700">LOGIN</button></a>
       <a href="signup"><button class="text-gray-700  border-2 border-blue-500 rounded px-10 uppercase py-2 hover:bg-blue-500 hover:text-white">SIGNUP</button></a>
     </div>
 </div>

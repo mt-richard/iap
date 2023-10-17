@@ -16,6 +16,7 @@ switch ($action) {
             "phone"=>['requred'=>true],
             "tin"=>['requred'=>true],
             "profile"=>['requred'=>true],
+            "major_in"=>['requred'=>true],
             "password"=>['required'=>true],
             "username"=>['required'=>true]
         ]);
@@ -33,6 +34,7 @@ switch ($action) {
         $phone=input::get("phone");
         $tin=input::get("tin");
         $profile=input::get("profile");
+        $major=input::get("major_in");
         $password=input::getHash(input::get("password"));
         $username=input::get("username");
         //username check
@@ -45,7 +47,7 @@ switch ($action) {
         if ($existusername==$username) {
             echo json_encode(["isOk"=>True,"data"=>"Username was Taken"]);
         }else {
-            $query="INSERT INTO a_partner_tb (`name`, `phone`, `tin`, `place`, `email`, `c_profile`, `user_id`) VALUES ('{$name}', '{$phone}', '{$tin}', '{$place}', '{$email}', '{$profile}', $user_id_sql)";
+            $query="INSERT INTO a_partner_tb (`name`, `phone`, `tin`, `place`, `email`, `major_in`, `c_profile`, `user_id`) VALUES ('{$name}', '{$phone}', '{$tin}', '{$place}', '{$email}', '{$major}', '{$profile}', $user_id_sql)";
             $isinserted=$database->query($query);
             $pId=$database->inset_id();
             // $database->beginTransaction();

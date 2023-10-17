@@ -48,7 +48,7 @@ if (isset($_SESSION['ht_userId'])) {
                                 <div class="auth-form">
                                     <div class="row">
                                         <div class="col-md-12 text-center mb-2">
-                                            <h3 class="mb-2 font-weight-bold"><strong>IPRC KIGALI Partner Registration Form</strong></h3>
+                                            <h3 class="mb-2 font-weight-bold">IPRC KIGALI Partner Registration Form</h3>
                                             <hr/>
                                         </div>
                                         <div class="col-md-4 my-auto">
@@ -61,42 +61,59 @@ if (isset($_SESSION['ht_userId'])) {
                                             <form action="#" id="formLock" autocomplete="off">
                                                 <div class="form-group row">
                                                     <div class="col-md-6">
-                                                        <label><strong>Company Name</strong></label>
+                                                        <label class="text-black form-label">Company Name <span class="required text-danger">*</span></label>
                                                         <input type="text" class="form-control" value="" name="company" placeholder="Eg:mucyo ltd">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label><strong>TIN</strong></label>
+                                                        <label class="text-black form-label">TIN <span class="required text-danger">*</span></label>
                                                         <input type="number" class="form-control" value="" name="tin" placeholder="Eg:111111111" onkeypress="limitKeypress(event,this.value,9)">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                      <div class="col-md-6">
-                                                        <label><strong>Contact Person</strong></label>
+                                                        <label class="text-black form-label">Contact Person <span class="required text-danger">*</span></label>
                                                         <input type="text" class="form-control" value="" name="person" placeholder="Eg:Kalisa Shaffi" onkeypress="limitKeypress(event,this.value,60)">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label><strong>Contact Phone</strong></label>
+                                                        <label class="text-black form-label">Contact Phone <span class="required text-danger">*</span></label>
                                                         <input type="text" class="form-control" value="" name="phone" placeholder="Eg:07....." onkeypress="limitKeypress(event,this.value,10)">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label><strong>Contact Email</strong></label>
+                                                        <label class="text-black form-label">Contact Email <span class="required text-danger">*</span></label>
                                                         <input type="text" class="form-control" value="" name="email" placeholder="Eg:mucyoltd@gmail.com" >
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label><strong>Working place</strong></label>
+                                                        <label class="text-black form-label">Working place <span class="required text-danger">*</span></label>
                                                         <input type="text" class="form-control" value="" name="place" placeholder="Eg:kigali city" >
                                                     </div>
+
                                                     
                                                 </div>
+                                                <div class="col-lg-12">
+                                                    <div class="mb-3">
+                                                        <label class="text-black form-label" for="menu_type" class="text-black form-label">Major Field <span class="required text-danger">*</span></label>
+                                                        <select type="text" class="form-control" name="major_in" >
+                                                            <option value="" disabled selected>__select__</option>
+                                                            <option value="Information and Communication technology">Information and Communication technology</option>
+                                                            <option value="Transport and Logistics Department">Transport and Logistics Department</option>
+                                                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                                            <option value="Mining Engineering">Mining Engineering</option>
+                                                            <option value="Civil Engineering">Civil Engineering</option>
+                                                            <option value="Creative Arts Department">Creative Arts Department</option>
+                                                            <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+                                                        </select>
+                                                    
+                                                    </div>
+                                                </div> 
                                                 <div class="form-group row">
                                                     <div class="col-md-6">
-                                                    <label><strong>Username</strong></label>
+                                                    <label class="text-black form-label">Username</label>
                                                     <input type="text" class="form-control" value="" name="user_name" placeholder="Eg: Habimana" onkeypress="limitKeypress(event,this.value,50)">
                                                     <input type="hidden" class="form-control" value="SUPPLIER_REGISTRATION" name="action">
                                                     </div>
                                                     <div class="col-md-6">
-                                                    <label><strong>password</strong></label>
-                                                    <input type="text" class="form-control text-uppercase" placeholder="*********" value="" name="password" id="pswd">
+                                                    <label class="text-black form-label">Password</label>
+                                                    <input type="password" class="form-control text-uppercase" placeholder="*********" value="" name="password" id="pswd">
                                                     </div>
                                                     
                                                 </div>

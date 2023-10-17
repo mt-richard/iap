@@ -59,6 +59,7 @@ switch ($action) {
             "phone"=>$database->escape_value($_POST['phone']),
             "tin"=>00000,
             "place"=>$database->escape_value($_POST['place']),
+            "major_in"=>$database->escape_value($_POST['major_in']),
             "user_id"=>NULL,
             "is_active"=>"no"
         ];
