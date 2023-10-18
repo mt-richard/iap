@@ -46,7 +46,7 @@ include("./includes/head.php");
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="widget-stat card">
-                                            <div class="h-50 rounded card-body p-4 btn-light dates" onclick="chooseReport('LSNP','List of Students haven\'t partner')">
+                                            <div class="h-50 rounded card-body p-4 btn-secondary dates" onclick="chooseReport('LSNP','List of Students haven\'t partner')">
                                                 <div class="media ai-icon d-flex">
                                                     <div class="media-body ">
                                                         <p class="mb-0 text-white font-weight-bolder">List of Students haven't partner </p>
