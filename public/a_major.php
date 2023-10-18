@@ -12,7 +12,7 @@ include("./includes/head.php");
     <!-- header here -->
     <?php include("./header.php") ?>
     <?php
-    $currentIntern=$database->get("*","a_internaship_periode","status='activated'");
+    $currentIntern=$database->get("*","a_internaship_periode","status='activated' ");
     $studentNumbers=0;
     if(isset($currentIntern->id)){
     $studentNumbers=$database->count_all("a_student_tb where internaship_periode_id={$currentIntern->id}");
@@ -33,7 +33,7 @@ include("./includes/head.php");
                         <div class="card-header border-0 pb-0 d-sm-flex flex-wrap d-block">
                             <div class="mb-3">
                                 <p class="mb-1">
-                              <span>Current Internaship students <span class="badge badge-info badge-sm"><?=$studentNumbers?></span></span>
+                              <span>Current IAP students <span class="badge badge-info badge-sm"><?=$studentNumbers?></span></span>
                                   
                                 </p>                                   
                                 <!-- <small class="mb-0"></small> -->
@@ -61,20 +61,14 @@ include("./includes/head.php");
                                         
                                         $i=0;
                                         $userID=$_SESSION['ht_userId'];
-                                        echo "<script>console.log($userID)</script>";
-                                        $partnermajor = $database->fetch("SELECT major_in FROM a_partner_tb where id = 26");
-                                        if ($partnermajor === false) {
-                                            // Handle the database query error here
-                                            echo "Database query error: " . $database->error();
-                                        } else {
-                                            // The query was successful 
-                                            $major = $partnermajor['major_in'];
-                                            // $major = json_encode($partnermajor);
-                                            // $available = json_decode($major, true);
-                                            print_r($major); 
-                                            // echo "<script>console.log($available)</script>";
+                                        $partnerID=$_SESSION['ht_level'];
+                                        echo "<script>console.log($partnerID)</script>";
+                                        $partnermajor = $database->fetch("SELECT * FROM a_partner_tb where id = 26");
+                                        foreach ($partnermajor as $key => $pm) {
+                                            $selectedmajor = $pm['major_in'];
                                         }
-                                        $major=$database->fetch("SELECT COUNT(*) as total,major_in FROM a_student_tb WHERE (internaship_periode_id={$currentIntern->id} AND partner_id IS NULL AND major_in = '') GROUP by major_in ");
+                                        
+                                        $major=$database->fetch("SELECT COUNT(*) as total,major_in FROM a_student_tb WHERE (internaship_periode_id={$currentIntern->id} AND partner_id IS NULL AND major_in = '$selectedmajor') GROUP by major_in ");
                                         foreach ($major as $key => $m) {
                                             $i++;
                                             $noSpace=input::removeSpaceWith($m['major_in'],"_");

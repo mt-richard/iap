@@ -17,7 +17,7 @@ include("./includes/head.php");
                             <div class="mb-3">
                                 <h4 class="card-title mb-1">
                                     <!-- <button class=" btn btn-outline-primary">Create Menu</button> -->
-                                    <button class=" btn btn-outline-primary" onclick="openModel()">Add internaship</button>
+                                    <button class=" btn btn-outline-primary" onclick="openModel()">Add IAP</button>
                                 </h4>
                                 <!-- <small class="mb-0"></small> -->
                             </div>
@@ -25,7 +25,7 @@ include("./includes/head.php");
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active" data-bs-toggle="tab" href="#monthly" role="tab">
-                                            ALL Internaship
+                                            ALL IAPs
                                         </a>
                                     </li>
                                 </ul>
@@ -106,7 +106,7 @@ include("./includes/head.php");
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="title">Open New Internaship Periode</h5>
+                    <h5 class="modal-title" id="title">Open New IAP Periode</h5>
                     <span class="  close"> <span class=" fa fa-times " data-bs-dismiss="modal"></span></span>
                     </button>
                 </div>
@@ -167,13 +167,13 @@ include("./includes/head.php");
     <!-- include footer -->
     <?php include_once("./footer.php") ?>
     <script>
-    function openModel(title="Add New  internaship"){
+    function openModel(title="Add New  IAP"){
             $("#title").text(title);
             $("#basicModal").modal("show");
             $("#id").val('0');
         }
         function openInternLog(intern){
-            openModel("Edit internaship information");
+            openModel("Edit IAP information");
             $("#start_date").val(intern.start_date);
             $("#end_date").val(intern.end_date);
             $("#upload_grade").val(intern.upload_grade);

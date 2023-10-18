@@ -1,9 +1,14 @@
 ## users
 
-admin:iprckigali,@123
-partner:
-student:
-supervisior:
+admin
+partner
+student
+supervisior
+
+## ADMIN
+
+    username:iprckigali
+    password:@123
 
 ## changes
 

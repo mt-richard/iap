@@ -20,18 +20,7 @@ if($database->count_all("a_internaship_periode")>0){
                 <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
                 <div id="search-results-container" >
                   <ul id="search-results">
-                      <!-- <li> <a href="benificiery?p=1">CT:Kwizera elisa #789047172/gihango</a>
-                      </li>
-                      <li> <a href="benificiery?p=1">CT:Kwizera elisa #789047172/gihango</a>
-                      </li>
-                      <li> <a href="benificiery?p=1">CT:Kwizera elisa #789047172/gihango</a>
-                      </li>
-                      <li> <a href="benificiery?p=1">CT:Kwizera elisa #789047172/gihango</a>
-                      </li>
-                      <li> <a href="benificiery?p=1">CT:Kwizera elisa #789047172/gihango</a>
-                      </li>
-                      <li> <a href="benificiery?p=1">CT:Kwizera elisa #789047172/gihango</a>
-                      </li> -->
+                     
               </ul>
               </div>
               </div>
@@ -58,7 +47,7 @@ if($database->count_all("a_internaship_periode")>0){
                           $row['id']=input::enc_dec("e",$row['id']);
                           ?>
                       <li>
-                        <div class="timeline-panel" onclick="window.location.href='<?=$row['link']?>&n=<?=$row['id']?>'">
+                        <div class="timeline-panel" onclick="window.location.href='<?=$row['link']?>?n=<?=$row['id']?>'">
                           <div class="media me-2 media-danger">NT</div>
                           <div class="media-body">
                             <h6 class="mb-1"><?=$row['message'] ?></h6>
