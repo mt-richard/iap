@@ -192,9 +192,9 @@ switch ($action) {
         $sqlQuery="INSERT INTO a_partner_student_request(request_student_number,major_in,partner_id,internaship_id,created_at) VALUES $sql";
         // echo json_encode(["status"=>$sqlQuery]);
         // notify College
-        $msg=$_SESSION['ht_name'] . " We are requesting ". $allStudent ." Student from your COllege";
-        $notifyQuery="INSERT INTO notifications_tb(message,link,level,level_id,done_by) value('$msg','a_student_request_admin?id=$userId','ADMIN',1,$levelId)"; 
-        $database->query($notifyQuery);
+        // $msg=$_SESSION['ht_name'] . " We are requesting ". $allStudent ." Student from your COllege";
+        // $notifyQuery="INSERT INTO notifications_tb(message,link,level,level_id,done_by) value('$msg','a_student_request_admin?id=$userId','ADMIN',1,$levelId)"; 
+        // $database->query($notifyQuery);
          // update requested student
          $database->query("DELETE from a_partner_student_request_totals WHERE internaship_id=$intern AND partner_id =$levelId");
          $database->insert("a_partner_student_request_totals",["requested_student"=>$allStudent,"internaship_id"=>$intern,"partner_id"=>$levelId]);

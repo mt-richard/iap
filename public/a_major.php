@@ -33,7 +33,12 @@ include("./includes/head.php");
                         <div class="card-header border-0 pb-0 d-sm-flex flex-wrap d-block">
                             <div class="mb-3">
                                 <p class="mb-1">
-                              <span>Current IAP students <span class="badge badge-info badge-sm"><?=$studentNumbers?></span></span>
+                                    <span>You can request student to partcipate IAP in your companys</span>
+                              <!-- <span>Current IAP students <span class="badge badge-info badge-sm">
+                                <?php
+                                // $studentNumbers
+                                ?>
+                            </span></span> -->
                                   
                                 </p>                                   
                                 <!-- <small class="mb-0"></small> -->
