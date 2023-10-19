@@ -105,6 +105,13 @@ if (isset($_SESSION['ht_userId'])) {
                                                     
                                                     </div>
                                                 </div> 
+                                                <div class="col-lg-12">
+                                                    <div class="mb-3">
+                                                        <label for="menu_type" class="text-black form-label">Company Profile <span class="required text-danger">*</span></label>
+                                                        <textarea type="text"  name="profile" placeholder="Eg:Bio" class=" form-control "></textarea>
+                                                        
+                                                    </div>
+                                                </div>
                                                 <div class="form-group row">
                                                     <div class="col-md-6">
                                                     <label class="text-black form-label">Username</label>

@@ -60,7 +60,7 @@ if(session::get("is_active")!='yes' && $level=='PARTERN'){
                                     <thead>
                                         <tr>
                                         <th class=" fs-13">#</th>
-                                            <th class=" fs-13">Internaship</th>
+                                            <th class=" fs-13">IAP</th>
                                             <th class=" fs-13">Requested Student</th>
                                             <th class=" fs-13">Given Student</th>
                                             <!-- <th></th> -->
@@ -100,7 +100,7 @@ if(session::get("is_active")!='yes' && $level=='PARTERN'){
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Current Internaship students</h5>
+                    <h5 class="modal-title">Current IAP students</h5>
                     <span class="  close"> <span class=" fa fa-times " data-bs-dismiss="modal"></span></span>
                     </button>
                 </div>

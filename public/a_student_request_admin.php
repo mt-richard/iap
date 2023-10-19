@@ -24,7 +24,7 @@ if (isset($_GET['n'])) {
                                 <h4 class="card-title mb-1">
                                     <!-- <button class=" btn btn-outline-primary">Create Menu</button> -->
                                     <!-- <button class=" btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#basicModal">Add Student</button> -->
-                                    <button class=" btn btn-outline-primary" id="btnRequestStudents">Requested internaship students</button>
+                                    <button class=" btn btn-outline-primary" id="btnRequestStudents">Requested students for IAP</button>
                                 </h4>                                   
                                 <!-- <small class="mb-0"></small> -->
                             </div>

@@ -285,7 +285,7 @@ if (isset($_GET['n'])) {
                             ssname=ssname!='__select__'?ssname:"-";
                             spname=spname!='__select__'?spname:"-";
         let msg=`${spname} as partern AND ${ssname} as supervisior`;
-        makePostRequest(`url=home&level=STUDENT&level_id=${selectedStudent.card_id}&action=NOTIFY&message=${msg}`).then((res)=>{
+        makePostRequest(`url=home?id=1&level=STUDENT&level_id=${selectedStudent.card_id}&action=NOTIFY&message=${msg}`).then((res)=>{
                         console.log(res);
                     });
         $("#basicModal").modal("hide");
@@ -346,7 +346,7 @@ if (isset($_GET['n'])) {
         $(document).ready(()=>{
             getSupperVisiorsAndPartners();
             $("#btnRequestStudents").click(()=>{
-                $("#title").text("Request new internaship students from IPRC KIGALI system");
+                $("#title").text("Request new IAP students from IPRC KIGALI system");
                 $("#basicModal").modal("show");
             })
         });
