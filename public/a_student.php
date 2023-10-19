@@ -251,9 +251,15 @@ if (isset($_GET['n'])) {
         var selectedStudent={};
         var partners=[];
         var suppervisiors=[];
-        const deps={IT:['Information Management','Network and communication Systems','Software Engineering'],
-            BUSSINESS:['Accounting','Finance','Management','Marketing'],
-            THEOLOGY:['theology'],HEALTHSCIENCE:['Health Sciences']};
+        const deps = {
+            'Information and Communication technology': 'Information and Communication technology',
+            'Transport and Logistics Department': 'Transport and Logistics Department',
+            'Mechanical Engineering': 'Mechanical Engineering',
+            'Mining Engineering': 'Mining Engineering',
+            'Civil Engineering': 'Civil Engineering',
+            'Creative Arts Department': 'Creative Arts Department',
+            'Electrical and Electronics Engineering': 'Electrical and Electronics Engineering',
+            };
 
     function onAssignStudent(e){
         let partner=$("#sPartner").val();
@@ -285,7 +291,7 @@ if (isset($_GET['n'])) {
                             ssname=ssname!='__select__'?ssname:"-";
                             spname=spname!='__select__'?spname:"-";
         let msg=`${spname} as partern AND ${ssname} as supervisior`;
-        makePostRequest(`url=home?id=1&level=STUDENT&level_id=${selectedStudent.card_id}&action=NOTIFY&message=${msg}`).then((res)=>{
+        makePostRequest(`url=home&level=STUDENT&level_id=${selectedStudent.card_id}&action=NOTIFY&message=${msg}`).then((res)=>{
                         console.log(res);
                     });
         $("#basicModal").modal("hide");
@@ -322,16 +328,21 @@ if (isset($_GET['n'])) {
                 $("#sPartner").html(option);
                 })
                 //  append suppervisiors
-                let option='<option selected value=" " >__select__</option>';
+                let option = '<option selected value="">__select__</option>';
+
                 suppervisiors.forEach(s => {
-                    let selected=selectedStudent.suppervisior_id==s.id?"selected":"NoSelected";
-                    // console.log(selectedStudent.suppervisior_id,s.id);
-                    let keydep=s.department.replace(/ /g,"");
-                    if(deps[keydep].includes(selectedStudent.major_in)){
-                        option+=`<option value="${s.id}" ${selected}>${s.names} -> ${s.department}</option>`;
-                    }
+                let selected = selectedStudent.suppervisior_id === s.id ? "selected" : "";
+                console.log(s.id, s.names, s.department);
+                
+                // Check if the supervisor's department matches the selected student's major department
+                if (deps[s.department] === selectedStudent.major_in) {
+                    option += `<option value="${s.id}" ${selected}>${s.names} -> ${s.department}</option>`;
+                }
                 });
+
                 $("#sSuppervisior").html(option);
+
+
                 
         }
         //  get suppervisiors

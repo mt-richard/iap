@@ -156,7 +156,7 @@ if (isset($_GET['n'])) {
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="menu_type" class="text-black form-label">TIN Number<span class="required text-danger">*</span></label>
-                                <input  type="number" name="tin"   placeholder="Eg:12800000" class=" form-control"/>
+                                <input  type="number" name="tin"   placeholder="Eg:12800000" class=" form-control onkeypress="limitKeypress(event,this.value,9)/>
                             </div>
                         </div> 
                         <div class="col-lg-6">
