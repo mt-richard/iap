@@ -101,7 +101,7 @@ include("./includes/head.php");
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="widget-stat card">
-                                            <div class="h-50 rounded card-body p-4 btn-info dates" onclick="chooseReport('SLB','Student logbook')">
+                                            <div class="h-50 rounded card-body p-4 btn-info dates" onclick="chooseLogbook('SLB','Student logbook')">
                                                 <div class="media ai-icon d-flex">
                                                     <div class="media-body ">
                                                         <p class="mb-0 text-white font-weight-bolder">Students Logbook</p>
@@ -180,8 +180,10 @@ include("./includes/head.php");
         var action="";
  function generateReport(){
   let req=$("#form").serialize();
-  let url="generatedReport?"+req;
-  window.open(url, '_blank').focus();
+//   let url="generatedReport?"+req;
+  let url1="generatedLogbook?"+req;
+//   window.open(url, '_blank').focus();
+  window.open(url1, '_blank').focus();
   // window.open(url);
  }
   function chooseReport(name="",label=""){
@@ -189,6 +191,17 @@ include("./includes/head.php");
     if(name!="SLB"){
       let url=`generatedReport?rname=${name}`;
       window.open(url, '_blank').focus();
+      return;
+    }
+    $("#rname").val(name);
+    $("#asr").text(label)
+    $("#basicModal").modal("show");
+  }
+  function chooseLogbook(name="",label=""){
+    action=name;
+    if(name!="SLB"){
+      let url1=`generatedLogbook?rname=${name}`;
+      window.open(url1, '_blank').focus();
       return;
     }
     $("#rname").val(name);
