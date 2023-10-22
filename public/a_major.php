@@ -33,7 +33,12 @@ include("./includes/head.php");
                         <div class="card-header border-0 pb-0 d-sm-flex flex-wrap d-block">
                             <div class="mb-3">
                                 <p class="mb-1">
-                              <span>Current IAP students <span class="badge badge-info badge-sm"><?=$studentNumbers?></span></span>
+                                    <span>You can request student to partcipate IAP in your companys</span>
+                              <!-- <span>Current IAP students <span class="badge badge-info badge-sm">
+                                <?php
+                                // $studentNumbers
+                                ?>
+                            </span></span> -->
                                   
                                 </p>                                   
                                 <!-- <small class="mb-0"></small> -->
@@ -61,13 +66,13 @@ include("./includes/head.php");
                                         
                                         $i=0;
                                         $userID=$_SESSION['ht_userId'];
-                                        $partnerID=$_SESSION['ht_level'];
-                                        echo "<script>console.log($partnerID)</script>";
-                                        $partnermajor = $database->fetch("SELECT * FROM a_partner_tb where id = 26");
+                                        $partnerID=$_SESSION['ht_hotel'];
+                                        
+                                        $partnermajor = $database->fetch("SELECT * FROM a_partner_tb where id = $partnerID");
                                         foreach ($partnermajor as $key => $pm) {
                                             $selectedmajor = $pm['major_in'];
                                         }
-                                        
+                                        // echo "<script>console.log($partnerID)</script>";
                                         $major=$database->fetch("SELECT COUNT(*) as total,major_in FROM a_student_tb WHERE (internaship_periode_id={$currentIntern->id} AND partner_id IS NULL AND major_in = '$selectedmajor') GROUP by major_in ");
                                         foreach ($major as $key => $m) {
                                             $i++;

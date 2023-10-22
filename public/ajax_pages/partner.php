@@ -25,9 +25,7 @@ switch ($action) {
             echo json_encode(["isOk"=>false,"data"=>implode(',',$val->errors())]);
             exit(0);
         }
-        $user_id_value = $userid ? $userid : NULL;
-        $user_id_sql = is_numeric($user_id_value) ? $user_id_value : NULL;
-
+        $userid=$_SESSION['ht_userId'];
         $name=input::get("name");
         $email=input::get("email");
         $place=input::get("place");
@@ -47,7 +45,7 @@ switch ($action) {
         if ($existusername==$username) {
             echo json_encode(["isOk"=>True,"data"=>"Username was Taken"]);
         }else {
-            $query="INSERT INTO a_partner_tb (`name`, `phone`, `tin`, `place`, `email`, `major_in`, `c_profile`, `user_id`) VALUES ('{$name}', '{$phone}', '{$tin}', '{$place}', '{$email}', '{$major}', '{$profile}', $user_id_sql)";
+            $query="INSERT INTO a_partner_tb (`name`, `phone`, `tin`, `place`, `email`, `major_in`, `c_profile`, `user_id`) VALUES ('{$name}', '{$phone}', '{$tin}', '{$place}', '{$email}', '{$major}', '{$profile}', $userid)";
             $isinserted=$database->query($query);
             $pId=$database->inset_id();
             // $database->beginTransaction();

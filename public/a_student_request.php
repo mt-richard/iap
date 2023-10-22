@@ -17,6 +17,8 @@ if(session::get("is_active")!='yes' && $level=='PARTERN'){
     $given=0;
     $requested=0;
     $userID=$_SESSION['ht_hotel'];
+    
+    
     if(isset($currentIntern->id)){
     $studentNumbers=$database->count_all("a_student_tb where internaship_periode_id={$currentIntern->id}");
     $taken=$database->get("SUM(given_student) AS total","a_partner_student_request_totals","internaship_id={$currentIntern->id}")->total;
@@ -36,7 +38,22 @@ if(session::get("is_active")!='yes' && $level=='PARTERN'){
                         <div class="card-header border-0 pb-0 d-sm-flex flex-wrap d-block">
                             <div class="mb-3">
                                 <h4 class=" mb-1">
-                             <a href="a_major"> <span>Available students for IAP <span class="badge badge-info badge-sm"><?=$studentNumbers?></span></span>
+                             <a href="a_major"> <span>Available students for IAP <span class="badge badge-info badge-sm"><?php 
+                             
+                                        $partnerID=$_SESSION['ht_hotel'];
+                                        
+                                        $partnermajor = $database->fetch("SELECT * FROM a_partner_tb where id = $partnerID");
+                                        foreach ($partnermajor as $key => $pm) {
+                                            $selectedmajor = $pm['major_in'];
+                                            $studentNumberss=$database->fetch("SELECT COUNT(*) as total FROM a_student_tb where major_in='{$selectedmajor}' and partner_id IS NULL and  internaship_periode_id={$currentIntern->id} ");
+                                            foreach ($studentNumberss as $key => $number) {
+                                            echo  $number['total'];
+                                        }
+                                            // echo json_encode($studentNumberss);
+                                        
+                                        }
+                                        
+                             ?></span></span>
                                     <!-- <button class=" btn btn-outline-primary" >View Now</button> -->
                                 </a>
                                
@@ -60,7 +77,7 @@ if(session::get("is_active")!='yes' && $level=='PARTERN'){
                                     <thead>
                                         <tr>
                                         <th class=" fs-13">#</th>
-                                            <th class=" fs-13">Internaship</th>
+                                            <th class=" fs-13">IAP</th>
                                             <th class=" fs-13">Requested Student</th>
                                             <th class=" fs-13">Given Student</th>
                                             <!-- <th></th> -->
@@ -100,7 +117,7 @@ if(session::get("is_active")!='yes' && $level=='PARTERN'){
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Current Internaship students</h5>
+                    <h5 class="modal-title">Current IAP students</h5>
                     <span class="  close"> <span class=" fa fa-times " data-bs-dismiss="modal"></span></span>
                     </button>
                 </div>

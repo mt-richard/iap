@@ -60,7 +60,6 @@ switch ($action) {
             exit(0);
         }
     
-        $pt=upload::Images($_FILES,"photo","../uploads/")['sqlValue']; 
         $name=input::get("description");
         $c=input::get("challenge");
         $l=input::get("lesson");
@@ -73,8 +72,8 @@ switch ($action) {
         // $logdate=input::get("log_date");
          //daily permit
          if(!$isEditable){
-       $query="INSERT INTO a_student_logbook(screenshoots,name,objective,challenges,student_id,suppervisor_id,internaship_id,partner_id,suppervisior_comment) 
-       values('{$pt}','{$name}','{$l}','{$c}',{$userId},'{$sup}','{$i}','{$partner}','{$spcomment}')";
+       $query="INSERT INTO a_student_logbook(name,objective,challenges,student_id,suppervisor_id,internaship_id,partner_id,suppervisior_comment) 
+       values('{$name}','{$l}','{$c}',{$userId},'{$sup}','{$i}','{$partner}','{$spcomment}')";
          }else{
             // $pt=empty($pt)?"":"screenshoots='$pt',";
             $query="UPDATE a_student_logbook SET name='$name',objective='$l',suppervisior_comment='$spcomment',challenges='$c' WHERE student_id=$userId AND log_date='{$today}'";

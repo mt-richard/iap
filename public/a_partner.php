@@ -139,7 +139,6 @@ if (isset($_GET['n'])) {
                             <div class="mb-3">
                                 <label for="menu_type" class="text-black form-label">Email<span class="required text-danger">*</span></label>
                                 <input type="email"  name="email" placeholder="Eg:UR@company.net" class=" form-control "/>
-                                <!-- <input type="hidden" name="action" value="ADD_SUPERVISOR"/> -->
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -157,7 +156,7 @@ if (isset($_GET['n'])) {
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="menu_type" class="text-black form-label">TIN Number<span class="required text-danger">*</span></label>
-                                <input  type="number" name="tin"   placeholder="Eg:12800000" class=" form-control"/>
+                                <input  type="number" name="tin"   placeholder="Eg:12800000" class=" form-control onkeypress="limitKeypress(event,this.value,9)/>
                             </div>
                         </div> 
                         <div class="col-lg-6">
@@ -172,6 +171,22 @@ if (isset($_GET['n'])) {
                                 <input  type="text" name="password"   placeholder="Eg:*****" class=" form-control"/>
                             </div>
                         </div> 
+                        <div class="col-lg-12">
+                        <div class="mb-3">
+                                                        <label class="text-black form-label" for="menu_type" class="text-black form-label">Major Field <span class="required text-danger">*</span></label>
+                                                        <select type="text" class="form-control" name="major_in" >
+                                                            <option value="" disabled selected>__select__</option>
+                                                            <option value="Information and Communication technology">Information and Communication technology</option>
+                                                            <option value="Transport and Logistics Department">Transport and Logistics Department</option>
+                                                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                                            <option value="Mining Engineering">Mining Engineering</option>
+                                                            <option value="Civil Engineering">Civil Engineering</option>
+                                                            <option value="Creative Arts Department">Creative Arts Department</option>
+                                                            <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+                                                        </select>
+                                                    
+                                                    </div>
+                                                </div>
                         <div class="col-lg-12">
                             <div class="mb-3">
                                 <label for="menu_type" class="text-black form-label">Company Profile <span class="required text-danger">*</span></label>

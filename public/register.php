@@ -20,6 +20,7 @@ if (isset($_SESSION['ht_userId'])) {
     <link href="css/customer/nprogress.css" rel='stylesheet' />
     <link href="css/customer/mycss.css" rel='stylesheet' />
     <script src="js/customer/nprogress.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="h-100 ourbg">
@@ -38,7 +39,7 @@ if (isset($_SESSION['ht_userId'])) {
             }
         }
     </script>
-    <div class="authincation h-100">
+    <div class="authincation h-100 ">
         <div class="container h-100">
             <div class="row justify-content-center h-100 align-items-center">
                 <div class="col-md-12">
@@ -47,52 +48,52 @@ if (isset($_SESSION['ht_userId'])) {
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <div class="row">
-                                        <div class="col-md-12 text-center mb-2">
-                                            <h3 class="mb-2 font-weight-bold">IPRC KIGALI Partner Registration Form</h3>
+                                        <div class="col-md-12 text-center mb-2 border-b">
+                                            <h1 class="mb-2 font-black text-4xl">IPRC KIGALI Partner Registration Form</h1>
                                             <hr/>
                                         </div>
-                                        <div class="col-md-4 my-auto">
+                                        <div class="col-md-4 my-auto pt-4">
                                             <div class="text-center">
                                                 <!-- MyStoma -->
                                                 <a href="./"><img src="images/rplogo.png" alt="" width="330" class="mt-10 my-auto"></a>
                                             </div>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-8 pt-4">
                                             <form action="#" id="formLock" autocomplete="off">
                                                 <div class="form-group row">
                                                     <div class="col-md-6">
-                                                        <label class="text-black form-label">Company Name <span class="required text-danger">*</span></label>
-                                                        <input type="text" class="form-control" value="" name="company" placeholder="Eg:mucyo ltd">
+                                                        <label class="font-semibold text-gray-700 form-label">Company Name <span class="required text-danger">*</span></label>
+                                                        <input type="text" class="form-control border-1 border-gray-400 font-semibold leading-6" value="" name="company" placeholder="Eg:mucyo ltd">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="text-black form-label">TIN <span class="required text-danger">*</span></label>
-                                                        <input type="number" class="form-control" value="" name="tin" placeholder="Eg:111111111" onkeypress="limitKeypress(event,this.value,9)">
+                                                        <label class="font-semibold text-gray-700 form-label">TIN <span class="required text-danger">*</span></label>
+                                                        <input type="number" class="form-control border-1 border-gray-400 font-semibold leading-6" value="" name="tin" placeholder="Eg:111111111" onkeypress="limitKeypress(event,this.value,9)">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                      <div class="col-md-6">
-                                                        <label class="text-black form-label">Contact Person <span class="required text-danger">*</span></label>
-                                                        <input type="text" class="form-control" value="" name="person" placeholder="Eg:Kalisa Shaffi" onkeypress="limitKeypress(event,this.value,60)">
+                                                        <label class="font-semibold text-gray-700 form-label">Contact Person <span class="required text-danger">*</span></label>
+                                                        <input type="text" class="form-control border-1 border-gray-400 font-semibold leading-6" value="" name="person" placeholder="Eg:Kalisa Shaffi" onkeypress="limitKeypress(event,this.value,60)">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="text-black form-label">Contact Phone <span class="required text-danger">*</span></label>
-                                                        <input type="text" class="form-control" value="" name="phone" placeholder="Eg:07....." onkeypress="limitKeypress(event,this.value,10)">
+                                                        <label class="font-semibold text-gray-700 form-label">Contact Phone <span class="required text-danger">*</span></label>
+                                                        <input type="text" class="form-control border-1 border-gray-400 font-semibold leading-6" value="" name="phone" placeholder="Eg:07....." onkeypress="limitKeypress(event,this.value,10)">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="text-black form-label">Contact Email <span class="required text-danger">*</span></label>
-                                                        <input type="text" class="form-control" value="" name="email" placeholder="Eg:mucyoltd@gmail.com" >
+                                                        <label class="font-semibold text-gray-700 form-label">Contact Email <span class="required text-danger">*</span></label>
+                                                        <input type="text" class="form-control border-1 border-gray-400 font-semibold leading-6" value="" name="email" placeholder="Eg:mucyoltd@gmail.com" >
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="text-black form-label">Working place <span class="required text-danger">*</span></label>
-                                                        <input type="text" class="form-control" value="" name="place" placeholder="Eg:kigali city" >
+                                                        <label class="font-semibold text-gray-700 form-label">Working place <span class="required text-danger">*</span></label>
+                                                        <input type="text" class="form-control border-1 border-gray-400 font-semibold leading-6" value="" name="place" placeholder="Eg:kigali city" >
                                                     </div>
 
                                                     
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
-                                                        <label class="text-black form-label" for="menu_type" class="text-black form-label">Major Field <span class="required text-danger">*</span></label>
-                                                        <select type="text" class="form-control" name="major_in" >
+                                                        <label class="font-semibold text-gray-700 form-label" for="menu_type" class="text-gray-700 form-label">Major Field <span class="required text-danger">*</span></label>
+                                                        <select type="text" class="form-control border-1 border-gray-400 font-semibold leading-6" name="major_in" >
                                                             <option value="" disabled selected>__select__</option>
                                                             <option value="Information and Communication technology">Information and Communication technology</option>
                                                             <option value="Transport and Logistics Department">Transport and Logistics Department</option>
@@ -105,15 +106,22 @@ if (isset($_SESSION['ht_userId'])) {
                                                     
                                                     </div>
                                                 </div> 
+                                                <div class="col-lg-12">
+                                                    <div class="mb-3">
+                                                        <label for="menu_type" class="font-bold text-gray-700 form-label">Company Profile <span class="required text-danger">*</span></label>
+                                                        <textarea type="text"  name="profile" placeholder="Eg:Bio" class=" form-control border-1 border-gray-400 font-semibold leading-6 "></textarea>
+                                                        
+                                                    </div>
+                                                </div>
                                                 <div class="form-group row">
                                                     <div class="col-md-6">
-                                                    <label class="text-black form-label">Username</label>
-                                                    <input type="text" class="form-control" value="" name="user_name" placeholder="Eg: Habimana" onkeypress="limitKeypress(event,this.value,50)">
-                                                    <input type="hidden" class="form-control" value="SUPPLIER_REGISTRATION" name="action">
+                                                    <label class="font-semibold text-gray-700 form-label">Username <span class="required text-danger">*</span></label>
+                                                    <input type="text" class="form-control border-1 border-gray-400 font-semibold leading-6" value="" name="user_name" placeholder="Eg: Habimana" onkeypress="limitKeypress(event,this.value,50)">
+                                                    <input type="hidden" class="form-control border-1 border-gray-400 font-semibold leading-6" value="SUPPLIER_REGISTRATION" name="action">
                                                     </div>
                                                     <div class="col-md-6">
-                                                    <label class="text-black form-label">Password</label>
-                                                    <input type="password" class="form-control text-uppercase" placeholder="*********" value="" name="password" id="pswd">
+                                                    <label class="font-semibold text-gray-700 form-label">Password <span class="required text-danger">*</span></label>
+                                                    <input type="password" class="form-control border-1 border-gray-400 font-semibold leading-6 text-uppercase" placeholder="*********" value="" name="password" id="pswd">
                                                     </div>
                                                     
                                                 </div>
@@ -123,7 +131,7 @@ if (isset($_SESSION['ht_userId'])) {
                                         <div class="col-12 text-center">
                                         <div class="form-group  text-center pt-3">
                                                     <div id="ajaxresults"></div>
-                                                     <button id="btnaLogin" type="button" class="btn  btn-md btn-primary w-25">Make Request</button>
+                                                     <button id="btnaLogin" type="button" class="btn  btn-md bg-blue-500 text-white w-25">Make Request</button>
                                                      <a class=" btn  btn-md btn-outline-warning w-25" href="./">Back</a>
                                                 </div>
                                         </div>
