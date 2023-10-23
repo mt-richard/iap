@@ -4,7 +4,7 @@ require("../../config/grobals.php");
 require("../../util/input.php");
 include("../../util/validate.php");
 include("../../util/upload.php");
-require 'vendor/autoload.php';
+require '../../vendor/autoload.php';
 use AfricasTalking\SDK\AfricasTalking;
 $studentPhoneNumber = '+250787654212';
 $username = 'mbanza';
@@ -89,12 +89,18 @@ switch ($action) {
                     }
         $database->query($query1);
         $database->commit();
-        
+        $std = $database->get("*","a_student_tb", "card_id=$cardId");
+        $pat = $database->get("*","a_partner_tb", "id=$partner");
+        $sup = $database->get("*","a_suppervisior_tb", "id=$suppervisior");
+        // echo "<script>console.log($std->phone)</script>";
+        // echo "<script>console.log($pat->phone)</script>";
+        // echo "<script>console.log(+$sup->phone)</script>";
         $result = $sms->send([
-            'to' => $studentPhoneNumber,
-            'message' => 'Welcome to IPRC KIGALI IAP Monitoring, Tracking, and Online Interaction System'
+            'to' => '+25' . $pat->phone,
+            'message' => "Welcome to IPRC KIGALI IAP Monitoring, Tracking, and Online Interaction System, we assign " . $std->first_name . ' ' . $std->last_name . " to your company"
         ]);
-        // print_r($result);
+        
+        print_r($result);
          echo json_encode(["isOk"=>true,"data"=>true,"q1"=>$query1,"q2"=>$query2,"q3"=>$query3]);
         } catch (\Exception $e) {
             $database->rollBack();
