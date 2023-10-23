@@ -1,5 +1,6 @@
 {
     "require": {
-        "fzaninotto/faker": "^1.9"
+        "africastalking/africastalking": "^3.0",
+        "fzaninotto/faker": "^1.5"
     }
 }

@@ -104,7 +104,7 @@ switch ($action) {
           if($database->count_all("a_student_tb where internaship_periode_id=$intern AND card_id=$cardId")==0){
           $fname=$database->escape_value($faker->firstName($gender));
          $lname= $database->escape_value($faker->lastName($gender));
-         $phone=$faker->e164PhoneNumber;
+         $phone=$faker->numerify('+25078#######');
         $isInserted=$database->insert("a_student_tb",[
             "internaship_periode_id"=>$intern,
             "card_id"=>$cardId,

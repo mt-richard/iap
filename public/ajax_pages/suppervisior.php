@@ -4,6 +4,14 @@ require("../../config/grobals.php");
 require("../../util/input.php");
 include("../../util/validate.php");
 include("../../util/upload.php");
+require 'vendor/autoload.php';
+use AfricasTalking\SDK\AfricasTalking;
+$studentPhoneNumber = '+250787654212';
+$username = 'mbanza';
+$apiKey = '0d8b08f99b4bd1d36cf7dbaa00b9d322e91d4b1968aacaad634300e2f66b3e8a';
+$AT = new AfricasTalking($username, $apiKey);
+$sms = $AT->sms();
+
 $action=input::get("action");
 if(!isset($_SESSION)){
     session_start();
@@ -81,8 +89,13 @@ switch ($action) {
                     }
         $database->query($query1);
         $database->commit();
-        echo json_encode(["isOk"=>true,"data"=>true,"q1"=>$query1,"q2"=>$query2,"q3"=>$query3]);
-         
+        
+        $result = $sms->send([
+            'to' => $studentPhoneNumber,
+            'message' => 'Welcome to IPRC KIGALI IAP Monitoring, Tracking, and Online Interaction System'
+        ]);
+        // print_r($result);
+         echo json_encode(["isOk"=>true,"data"=>true,"q1"=>$query1,"q2"=>$query2,"q3"=>$query3]);
         } catch (\Exception $e) {
             $database->rollBack();
             echo json_encode(["isOk"=>false,"data"=>$e->getMessage()]);
