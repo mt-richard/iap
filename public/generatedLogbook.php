@@ -220,16 +220,103 @@ if ($rName == "LSNCL") {
     
     </div>
 
+    <!-- section 2 -->
+    <div class="h-[1350px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col">
+       <div class="py-10">
+            <h3 class="text-center font-black text-4xl text-gray-900">SECTION TWO : Industrial Attachment Plan </h3>
+            <div class="flex w-full pt-5 gap-1">
+                <div class="w-1/3 h-4 rounded-md bg-green-600"></div>
+                <div class="w-1/3 h-4 rounded-md bg-yellow-600"></div>
+                <div class="w-1/3 h-4 rounded-md bg-blue-500"></div>
+            </div>
+       </div> 
+       <div class= "px-20" >
+            <div class="py-2">
+                <span class="font-bold text-xl py-2 text-gray-700"> This IA plan is completed by the student and the company supervisor. Competencies should be selected from the list stated in section one.  </span> 
+            </div>     
+            <div class="py-2">
+                <span class="font-bold text-xl py-2 text-gray-700">Note:The student plan to perform the tasks/work reflecting at least 50% of the competencies stated in section one. </span>
+            </div>
+       </div>
+
+       <div class="flex justify-between px-20 py-5">
+        <h3 class="font-semibold text-lg">Starting date : <?= $iap->start_date?> </h3>
+        <h3 class="font-semibold text-lg">Ending date : <?= $iap->end_date?> </h3>
+       </div>
+       <div class="px-20">
+        <table class="w-full text-gray-700">
+            <thead>
+                <tr class="border-b border-t border-gray-400 m-3 bg-gray-600 text-gray-100">
+                    <th class="p-2">No</th>
+                    <th class="p-2">Specific Competence to implement</th>
+                    <th class="p-2">Activities to carry out</th>
+                    <th class="p-2">Timeframe</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-gray-400 m-3">
+                    <td class="py-2">0</td>
+                    <td class="py-2">Perform Slump test</td>
+                    <td class="py-2">Testing Slump</td>
+                    <td class="py-2">2 hours</td>
+                </tr>
+                <tr class="border-b border-gray-400 m-3">
+                    <td class="py-2">1</td>
+                    <td class="py-2">Perform Slump test</td>
+                    <td class="py-2">Testing Slump</td>
+                    <td class="py-2">2 hours</td>
+                </tr>
+                <tr class="border-b border-gray-400 m-3">
+                    <td class="py-2">2</td>
+                    <td class="py-2">Perform Slump test</td>
+                    <td class="py-2">Testing Slump</td>
+                    <td class="py-2">2 hours</td>
+                </tr>
+                <tr class="border-b border-gray-400 m-3">
+                    <td class="py-2">3</td>
+                    <td class="py-2">Perform Slump test</td>
+                    <td class="py-2">Testing Slump</td>
+                    <td class="py-2">2 hours</td>
+                </tr>
+                <tr class="border-b border-gray-400 m-3">
+                    <td class="py-2">4</td>
+                    <td class="py-2">Perform Slump test</td>
+                    <td class="py-2">Testing Slump</td>
+                    <td class="py-2">2 hours</td>
+                </tr>
+            </tbody>
+        </table>
+       </div>
+
+    </div>
+
+    <!-- section 2 -->
+    <div class="h-[1350px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col">
+       <div class="py-10">
+            <h3 class="text-center font-black text-4xl text-gray-900">SECTION Three : Weekly report Sheet </h3>
+            <div class="flex w-full pt-5 gap-1">
+                <div class="w-1/3 h-4 rounded-md bg-green-600"></div>
+                <div class="w-1/3 h-4 rounded-md bg-yellow-600"></div>
+                <div class="w-1/3 h-4 rounded-md bg-blue-500"></div>
+            </div>
+       </div> 
+       <div class= "px-20" >
+            <div class="py-2">
+                <span class="font-bold text-xl py-2 text-gray-700"> This weekly report sheet is to be filled every day by the student, on the basis of the IA Plan. It is a tool for the student to keep track of the work performed and the tools used.
+  </span> 
+            </div>     
+            <div class="py-2">
+                <span class="font-bold text-xl py-2 text-gray-700">It is a supporting tool for the college's supervisor during the IAP final interview, to check the work performed and the tools used.</span>
+            </div>
+       </div>
+
+       <div class="flex justify-start px-20 py-5">
+        <h3 class="font-semibold text-lg">Date: From : <?= $iap->start_date?> </h3>
+        <h3 class="font-semibold text-lg">  to : <?= $iap->end_date?> </h3>
+       </div>
 
 
-
-<!-- daily acts -->
-    <div class=" h-[1350px] m-2 container-fluid col-8 bg-white py-5 px-5 ">
-        <div class="col-12 border border-1 border border-bottom">
-        </div>
-        
-        
-        <?php if ($rName == "SLB" && isset($_GET['student_id'])) {
+       <?php if ($rName == "SLB" && isset($_GET['student_id'])) {
  
             $id=(int)$_GET['student_id'];
             $cond="WHERE st.card_id=al.student_id  AND al.internaship_id='{$cIntern->id}'";
@@ -245,63 +332,40 @@ if ($rName == "LSNCL") {
                 // echo $sql;
             $lists=$database->fetch($sql);
         ?>
-        
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header border-0 pb-0 d-sm-flex d-block">
-                    <div class=" text-center d-flex justify-content-center align-items-center">
-                        <h4 class="card-title mb-1"> Student(s) logbook<br />
-                            <hr class=" hr" />
-                        </h4>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                        <thead>
-                                            <tr>
-                                            <th class=" fs-13">#</th>
-                                            <th class=" fs-13">Date</th>
-                                                <th class=" fs-13">Names/ID</th>
-                                                <th class=" fs-13">Description</th>                                       
-                                                <th class=" fs-13">Lesson </th>
-                                                <th class=" fs-13">Challenges</th>
-                                                <th class=" fs-13">P. Comment</th>
-                                                <th class=" fs-13">S. Comment</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-
-                                        
-                                        <tbody class=" fs-12">
+       <div class="px-20">
+        <table class="w-full text-gray-700">
+            <thead>
+                <tr class="border-b border-t border-gray-400 m-3 bg-gray-600 text-gray-100">
+                    <th class="p-2">No</th>
+                    <th class="p-2">Date</th>
+                    <th class="p-2">Objectives</th>
+                    <th class="p-2">Challenges</th>
+                    <th class="p-2">Partner Comment</th>
+                    <th class="p-2">Supervisor Comment</th>
+                </tr>
+            </thead>
+            <tbody class="text-md">
                                         <?php
                                             $i=0;
                                             foreach ($lists as $key => $h) {
                                                 $i++;
                                                 ?>
-                                            
-                                                <tr>
-                                                <td><?= $i?></td>
-                                                <td class=""><?= $h['created_at'] ?></td>
-                                                    <td  ><span class=" pointer"><?= $h['first_name']." ".$h['last_name'] ?>/<?=$h['card_id']?></span></td>                                            
-                                                    <td class=" text-capitalize"><?= $h['name'] ?></td>
-                                                    <td class=""><?= $h['objective'] ?></td>
-                                                    <td class=""><?= $h['challenges'] ?></td>
-                                                    <td class=""><?= $h['partner_comment'] ?></td>
-                                                    <td class="" id="sup<?=$h['id']?>"><?= $h['suppervisior_comment'] ?></td>
-                                        
+                                                <tr class="border-b border-t border-gray-400">
+                                                    <td class="p-2 border-l border-r"><?= $i?></td>
+                                                    <td class="p-2 border-l border-r" class=""><?= $h['created_at'] ?></td>
+                                                    <td class="p-2 border-l border-r" class=""><?= $h['objective'] ?></td>
+                                                    <td class="p-2 border-l border-r" class=""><?= $h['challenges'] ?></td>
+                                                    <td class="p-2 border-l border-r" class=""><?= $h['partner_comment'] ?></td>
+                                                    <td class="p-2 border-l border-r" class="" id="sup<?=$h['id']?>"><?= $h['suppervisior_comment'] ?></td>
                                                 </tr>
                                             <?php }
                                             ?>
                                         </tbody>
-                                
-                        
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </table>
+       </div>
     </div>
+<!-- daily acts -->
+   
     <?php }?>
 <!-- daily ends -->
 
