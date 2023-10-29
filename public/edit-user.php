@@ -61,7 +61,7 @@ $user=User::findById($userId);
                                                 <div class="row">
                                                     <div class="col-lg-4">
                                                         <div class="mb-3">
-                                                            <label for="name" class="text-black font-w600 form-label">Names<span class="required">*</span></label>
+                                                            <label for="name" class="text-black font-w600 form-label">Names<span class="text-danger required">*</span></label>
                                                             <input type="text" class="form-control" value="<?=$user->names?>" name="names" placeholder="Eg:John Doe" id="names">
                                                             <input type="hidden" value="<?= input::enc_dec('e', 'EDIT_USER_INFO') ?>" name="faction">
                                                             <input type="hidden" value="<?= $userId ?>" name="user_id">
@@ -69,21 +69,29 @@ $user=User::findById($userId);
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <div class="mb-3">
-                                                            <label for="name" class="text-black font-w600 form-label">Phone<span class="required">*</span></label>
+                                                            <label for="name" class="text-black font-w600 form-label">Phone<span class="text-danger required">*</span></label>
                                                             <input type="number" class="form-control" value="<?=$user->phone?>" name="phone" placeholder="Eg:0789047172" id="phone" onkeypress="limitKeypress(event,this.value,10)">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <div class="mb-3">
-                                                            <label for="uname" class="text-black font-w600 form-label">User name<span class="required">*</span></label>
+                                                            <label for="uname" class="text-black font-w600 form-label">User name<span class="text-danger required">*</span></label>
                                                             <div class=" d-flex flex-row">
                                                             <input type="text" class="form-control" readonly="true" value="<?=$user->username?>" name="username" placeholder="Eg:JohnD" id="uname">
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <!-- <div class="col-lg-4">
+                                                        <div class="mb-3">
+                                                            <label for="uname" class="text-black font-w600 form-label">Passsword<span class="text-danger required">*</span></label>
+                                                            <div class=" d-flex flex-row">
+                                                            <input type="text" class="form-control" readonly="true" value="<?=$user->secret?>" name="password" placeholder="Eg: *******" id="uname">
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
                                                     <div class="col-lg-6">
                                                         <div class="mb-3">
-                                                            <label for="hotel_level" class="text-black font-w600 form-label">level <span class="required">*</span></label>
+                                                            <label for="hotel_level" class="text-black font-w600 form-label">level <span class="text-danger required">*</span></label>
                                                             <select type="text" class="form-control" value="" name="user_level" id="hotel_level">
                                                             <option value="" disabled selected>__select__</option> 
                                                                 <option value="ADMIN" <?=$user->level=='ADMIN'?'selected':''?>>Admin</option>
@@ -94,9 +102,10 @@ $user=User::findById($userId);
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="col-lg-4">
                                                         <div class="mb-3">
-                                                            <label for="hotel_status" class="text-black font-w600 form-label">Status <span class="required">*</span></label>
+                                                            <label for="hotel_status" class="text-black font-w600 form-label">Status <span class="text-danger required">*</span></label>
                                                             <select type="text" class="form-control" value="" name="user_status" id="hotel_status">
                                                                 <option value="active" <?=$user->status=='active'?'selected':''?>>Active</option>
                                                                 <option value="inactive" <?=$user->status=='inactive'?'selected':''?>>Inactive</option>

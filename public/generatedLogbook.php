@@ -47,7 +47,7 @@ if ($rName == "LSNCL") {
 
 <div class="bg-gray-400 col-12 flex flex-col items-center justify-center">
 <!-- cover -->
-    <div class="h-[1350px] m-2 container-fluid col-8 bg-yellow-200 py-5 px-5 ">
+    <div class="w-[1200px] h-[1570px]  container-fluid col-8 bg-yellow-200 py-5 px-5 ">
         <div class="row card px-5 py-5 bg-yellow-200 border-2 border-gray-800 rounded-3xl">
             <div class="col-12 ">
                 <div class="h-100 w-full flex justify-center items-center flex-col">
@@ -115,7 +115,7 @@ if ($rName == "LSNCL") {
     </div>
 <!-- cover end  -->
 <!-- some content -->
-    <div class="h-[1350px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col justify-center">
+    <div class="w-[1200px] h-[1570px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col justify-center">
        <div class="py-20">
             <h3 class="text-center font-black text-4xl text-gray-900">Statement of Commitment</h3>
             <div class="flex w-full pt-5 gap-1">
@@ -134,7 +134,7 @@ if ($rName == "LSNCL") {
     
     </div>
 <!-- end of content -->
-    <div class="h-[1350px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col justify-center">
+    <div class="w-[1200px] h-[1570px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col justify-center">
        <div class="py-10">
             <h3 class="text-center font-black text-4xl text-gray-900">Instruction to complete this Logbook</h3>
             <div class="flex w-full pt-5 gap-1">
@@ -171,7 +171,7 @@ if ($rName == "LSNCL") {
     </div>
 
     <!-- section 1 -->
-    <div class="h-[1350px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col">
+    <div class="w-[1200px] h-[1570px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col">
        <div class="py-10">
             <h3 class="text-center font-black text-4xl text-gray-900">SECTION ONE: Key Competencies</h3>
             <div class="flex w-full pt-5 gap-1">
@@ -221,7 +221,7 @@ if ($rName == "LSNCL") {
     </div>
 
     <!-- section 2 -->
-    <div class="h-[1350px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col">
+    <div class="w-[1200px] h-[1570px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col">
        <div class="py-10">
             <h3 class="text-center font-black text-4xl text-gray-900">SECTION TWO : Industrial Attachment Plan </h3>
             <div class="flex w-full pt-5 gap-1">
@@ -291,7 +291,7 @@ if ($rName == "LSNCL") {
     </div>
 
     <!-- section 2 -->
-    <div class="h-[1350px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col">
+    <div class="w-[1200px] h-[1570px] m-2 container-fluid col-8 bg-white py-10 px-5 flex flex-col">
        <div class="py-10">
             <h3 class="text-center font-black text-4xl text-gray-900">SECTION Three : Weekly report Sheet </h3>
             <div class="flex w-full pt-5 gap-1">

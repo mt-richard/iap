@@ -100,7 +100,7 @@ switch ($action) {
             'message' => "Welcome to IPRC KIGALI IAP Monitoring, Tracking, and Online Interaction System, we assign " . $std->first_name . ' ' . $std->last_name . " to your company"
         ]);
         
-        print_r($result);
+        // print_r($result);
          echo json_encode(["isOk"=>true,"data"=>true,"q1"=>$query1,"q2"=>$query2,"q3"=>$query3]);
         } catch (\Exception $e) {
             $database->rollBack();
